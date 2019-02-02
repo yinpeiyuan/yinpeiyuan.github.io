@@ -7,7 +7,11 @@
     // })
     
     function reP(img){ 
-        
+    var list =document.getElementsByClassName('changeIcon')
+    for(var i = 0, l = list.length; i < l; i++) {
+        var objTemp = list[i];
+        objTemp.style.display="none";
+        }
     document.getElementById(img).style.display = "block";  
     var e = e || event;
     stopFunc(e);

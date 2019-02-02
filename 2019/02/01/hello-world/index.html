@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="阿原的IT日记">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-01T02:26:16.678Z">
+<meta property="og:updated_time" content="2019-02-02T06:28:34.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
@@ -136,7 +136,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    1 分钟 读完 (大约 121 个字)
+                    1 分钟 读完 (大约 122 个字)
                 </span>
                 
             </div>
@@ -152,6 +152,7 @@
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
@@ -173,28 +174,23 @@
         <div class="buttons is-centered">
             
                 
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Alipay. Please set it in <code>_config.yml</code>.
-</div>
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
 
                 
                 
-<div class="notification is-danger">
-    You forgot to set the <code>qrcode</code> for Wechat. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                <!-- Visit https://www.paypal.com/donate/buttons/ to get your donate button -->
-
-<div class="notification is-danger">
-    You forgot to set the <code>business</code> and <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.
-</div>
-
-                
-                
-<div class="notification is-danger">
-    You forgot to set the <code>url</code> Patreon. Please set it in <code>_config.yml</code>.
-</div>
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/weixinpay.png" alt="微信"></div>
+</a>
 
                 
         </div>
@@ -287,11 +283,11 @@
         
         
         <div class="level is-mobile">
-            <img src="/images/weixin.jpg" id="oImg" style="display:none;position:absolute;top: 50%;left: 50%;margin: -100px 0 0 400px;
+            <img src="/images/weixin.jpg" class="changeIcon" id="oImg" style="display:none;position:absolute;top: 50%;left: 50%;margin: -100px 0 0 400px;
         z-index:9999;">
-        <img src="/images/QQ.jpg" id="qImg" style="display:none;position:absolute;top: 50%;left: 50%;margin: -100px 0 0 400px;
+        <img src="/images/QQ.jpg" id="qImg" class="changeIcon" style="display:none;position:absolute;top: 50%;left: 50%;margin: -100px 0 0 400px;
         z-index:9998;">
-        <img src="/images/bili.jpg" id="biliImg" style="display:none;position:absolute;top: 50%;left: 50%;margin: -100px 0 0 400px;
+        <img src="/images/bili.jpg" id="biliImg" class="changeIcon" style="display:none;position:absolute;top: 50%;left: 50%;margin: -100px 0 0 400px;
         z-index:9997;">
              <button class="level-item button is-white is-marginless" target="_blank" title="微信" onclick="reP('oImg')">
                     
@@ -299,14 +295,14 @@
              </button>
              <button class="level-item button is-white is-marginless" target="_blank" title="QQ" onclick="reP('qImg')">
                     
-                    <i class="fab fa-qqIcon"></i>
+                    <i class="fab fa-qqIcon "></i>
              </button>
              <button class="level-item button is-white is-marginless" target="_blank" title="Bili" onclick="reP('biliImg')">
                     
                     <i class="fab fa-biliIcon"></i>
              </button>
             
-            <a class="level-item button is-white is-marginless" target="_blank" title="github" href="https://github.com/ypyl">
+            <a class="level-item button is-white is-marginless" target="_blank" title="github" href="https://github.com/yinpeiyuan">
                 
                 <i class="fab fa-github" style="font-size: 1.5rem"></i>
                 
