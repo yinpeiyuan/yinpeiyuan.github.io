@@ -2,20 +2,29 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>分类 - 阿原的IT日记</title>
+<title>Html+Css的难点（一、浮动布局的原理以及消除浮动） - 阿原的IT日记</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="baidu-site-verification" content="nM9gr4fRJG">
 
 
 
-    <meta name="keywords" content="Html,Css,github+hexo,git,springboot,jqyery,bootstrap">
-<meta property="og:type" content="website">
-<meta property="og:title" content="阿原的IT日记">
-<meta property="og:url" content="/categories/index.html">
+    <meta name="description" content="视频教程：https://www.bilibili.com/video/av42968534">
+<meta name="keywords" content="Html,Css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Html+Css的难点（一、浮动布局的原理以及消除浮动）">
+<meta property="og:url" content="/2019/02/05/float/index.html">
 <meta property="og:site_name" content="阿原的IT日记">
+<meta property="og:description" content="视频教程：https://www.bilibili.com/video/av42968534">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/forth.assets/1549608342144.png">
+<meta property="og:image" content="/forth.assets/1549608620482.png">
+<meta property="og:image" content="/forth.assets/timg-1549609232291-1549774531768.jpg">
+<meta property="og:image" content="/forth.assets/1549609659287.png">
+<meta property="og:updated_time" content="2019-02-10T05:12:07.229Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿原的IT日记">
+<meta name="twitter:title" content="Html+Css的难点（一、浮动布局的原理以及消除浮动）">
+<meta name="twitter:description" content="视频教程：https://www.bilibili.com/video/av42968534">
+<meta name="twitter:image" content="/forth.assets/1549608342144.png">
 
 
 
@@ -85,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logoAyuan.jpg" alt="阿原的IT日记" height="28">
+                <img src="/images/logoAyuan.jpg" alt="Html+Css的难点（一、浮动布局的原理以及消除浮动）" height="28">
             
             </a>
         </div>
@@ -97,7 +106,7 @@
                 
                 <a class="navbar-item" href="/archives" style="font-size: 1.3rem">时间节点</a>
                 
-                <a class="navbar-item is-active" href="/categories" style="font-size: 1.3rem">分类</a>
+                <a class="navbar-item" href="/categories" style="font-size: 1.3rem">分类</a>
                 
                 <a class="navbar-item" href="/tags" style="font-size: 1.3rem">标签</a>
                 
@@ -121,43 +130,144 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
-<div class="card widget">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/thumbnails/h5.jpg" alt="Html+Css的难点（一、浮动布局的原理以及消除浮动）">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-05T01:48:16.000Z">2019-02-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Html/">Html</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4 分钟 读完 (大约 535 个字)
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Html+Css的难点（一、浮动布局的原理以及消除浮动）
+            
+        </h1>
+        <div class="content">
+            <p>视频教程：<a href="https://www.bilibili.com/video/av42968534" target="_blank" rel="noopener">https://www.bilibili.com/video/av42968534</a></p>
+<a id="more"></a>
+<h4 id="一、什么是浮动"><a href="#一、什么是浮动" class="headerlink" title="一、什么是浮动"></a>一、什么是浮动</h4><blockquote>
+<p>在我们布局的时用到的一种技术，能够方便我们进行布局，通过让元素浮动，我们可以使元素在水平上左右移动，再通过margin属性调整位置 </p>
+</blockquote>
+<h4 id="二、浮动的原理"><a href="#二、浮动的原理" class="headerlink" title="二、浮动的原理"></a>二、浮动的原理</h4><blockquote>
+<p>使当前元素脱离标准流，相当于浮动起来一样，浮动的框可以左右移动，直至它的外边缘遇到包含框或者另一个浮动框的边缘</p>
+</blockquote>
+<h4 id="三、浮动的生成"><a href="#三、浮动的生成" class="headerlink" title="三、浮动的生成"></a>三、浮动的生成</h4><blockquote>
+<p>使用css属性float：left/right/none 左浮动/右浮动/不浮动（默认）</p>
+</blockquote>
+<h4 id="四、浮动的影响"><a href="#四、浮动的影响" class="headerlink" title="四、浮动的影响"></a>四、浮动的影响</h4><ul>
+<li><p>对附近的元素布局造成改变，使得布局混乱</p>
+</li>
+<li><p>浮动后的元素可以设置宽度和高度等，也就是说元素浮动后会变成块级元素，但我更倾向于说元素变成inline-block类型的元素，即同时拥有块级与行内元素的特征</p>
+</li>
+<li><p>因为浮动元素脱离了普通流，会出现一种高度坍塌的现象：原来的父容器高度是当前元素A撑开的，但是当A元素浮动后，脱离普通流浮动起来，那父容器的高度就坍塌</p>
+</li>
+</ul>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-undefined">.a&#123;</span></span><br><span class="line"><span class="hljs-undefined">    width: 40%;</span></span><br><span class="line"><span class="hljs-undefined">    height:100px;</span></span><br><span class="line"><span class="hljs-undefined">    background: blue;</span></span><br><span class="line"><span class="hljs-undefined">&#125;</span></span><br><span class="line"><span class="hljs-undefined">.b&#123;</span></span><br><span class="line"><span class="hljs-undefined">    width: 70%;</span></span><br><span class="line"><span class="hljs-undefined">    height:100px;</span></span><br><span class="line"><span class="hljs-undefined">    background: red;</span></span><br><span class="line"><span class="hljs-undefined">&#125;</span></span><br><span class="line"><span class="hljs-undefined">.c&#123;</span></span><br><span class="line"><span class="hljs-undefined">    width: 90%;</span></span><br><span class="line"><span class="hljs-undefined">    height:120px;</span></span><br><span class="line"><span class="hljs-undefined">    background: green;</span></span><br><span class="line"><span class="hljs-undefined">&#125;</span></span><br><span class="line"><span class="hljs-undefined">.d&#123;</span></span><br><span class="line"><span class="hljs-undefined">    width: 50%;</span></span><br><span class="line"><span class="hljs-undefined">    height:100px;</span></span><br><span class="line"><span class="hljs-undefined">    background: black;  </span></span><br><span class="line"><span class="hljs-undefined">&#125;</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"a"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/forth.assets/1549608342144.png" alt="">&gt; 给div.b添加<code>float:left</code>向左浮动的属性</p>
+<p><img src="/forth.assets/1549608620482.png" alt=""></p>
+<blockquote>
+<p>div.b浮起来的，div.c马上占了div.b的位置。因为div.b已经不再标准流里。div.b其实就像鱼鳞一样飘起来了。</p>
+</blockquote>
+<p><img src="/forth.assets/timg-1549609232291-1549774531768.jpg" alt=""></p>
+<blockquote>
+<p>在div.b继续添加浮动元素div.g</p>
+</blockquote>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-undefined">.a&#123;</span></span><br><span class="line"><span class="hljs-undefined">    width: 40%;</span></span><br><span class="line"><span class="hljs-undefined">    height:100px;</span></span><br><span class="line"><span class="hljs-undefined">    background: blue;</span></span><br><span class="line"><span class="hljs-undefined">&#125;</span></span><br><span class="line"><span class="hljs-undefined">.b&#123;</span></span><br><span class="line"><span class="hljs-undefined">    width: 70%;</span></span><br><span class="line"><span class="hljs-undefined">    height:100px;</span></span><br><span class="line"><span class="hljs-undefined">    background: red;</span></span><br><span class="line"><span class="hljs-undefined">&#125;</span></span><br><span class="line"><span class="hljs-undefined">.c&#123;</span></span><br><span class="line"><span class="hljs-undefined">    width: 90%;</span></span><br><span class="line"><span class="hljs-undefined">    height:120px;</span></span><br><span class="line"><span class="hljs-undefined">    background: green;</span></span><br><span class="line"><span class="hljs-undefined">&#125;</span></span><br><span class="line"><span class="hljs-undefined">.d&#123;</span></span><br><span class="line"><span class="hljs-undefined">    width: 50%;</span></span><br><span class="line"><span class="hljs-undefined">    height:100px;</span></span><br><span class="line"><span class="hljs-undefined">    background: black;  </span></span><br><span class="line"><span class="hljs-undefined">&#125;</span></span><br><span class="line"><span class="hljs-undefined">.g&#123;</span></span><br><span class="line"><span class="hljs-undefined">    width: 20%;</span></span><br><span class="line"><span class="hljs-undefined">    height:100px;</span></span><br><span class="line"><span class="hljs-undefined">    background: yellow;  </span></span><br><span class="line"><span class="hljs-undefined">&#125;</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"a"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"b"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"g"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"c"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/forth.assets/1549609659287.png" alt=""></p>
+<blockquote>
+<p>原来的上下排布变成左右排布，原来的block属性变为类似inline-block </p>
+</blockquote>
+<h2 id="消除浮动"><a href="#消除浮动" class="headerlink" title="消除浮动"></a>消除浮动</h2><blockquote>
+<p>添加伪类 加入我有一个.container的div</p>
+</blockquote>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-undefined">.container::before&#123;</span></span><br><span class="line"><span class="hljs-undefined">	content:" ";</span></span><br><span class="line"><span class="hljs-undefined">    display:block;</span></span><br><span class="line"><span class="hljs-undefined">    clear:both</span></span><br><span class="line"><span class="hljs-undefined">&#125;</span></span><br><span class="line"><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Css/">Css</a>, <a class="has-link-grey -link" href="/tags/Html/">Html</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <div class="menu">
-            <h3 class="menu-label">
-                分类
-            </h3>
-            <ul class="menu-list">
-            <li>
-        <a class="level is-marginless" href="/categories/Html/">
-            <span class="level-start">
-                <span class="level-item">Html</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/github-hexo/">
-            <span class="level-start">
-                <span class="level-item">github+hexo</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">3</span>
-            </span>
-        </a></li><li>
-        <a class="level is-marginless" href="/categories/springboot/">
-            <span class="level-start">
-                <span class="level-item">springboot</span>
-            </span>
-            <span class="level-end">
-                <span class="level-item tag">1</span>
-            </span>
-        </a></li>
-            </ul>
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/weixinpay.png" alt="微信"></div>
+</a>
+
+                
         </div>
     </div>
-</div></div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/03/parttimeSystem/">
+                <span class="level-item">兼职管理平台系统</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
                 
 
 
@@ -774,7 +884,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logoAyuan.jpg" alt="阿原的IT日记" height="28">
+                    <img src="/images/logoAyuan.jpg" alt="Html+Css的难点（一、浮动布局的原理以及消除浮动）" height="28">
                 
                 </a>
                 <p class="is-size-7">
