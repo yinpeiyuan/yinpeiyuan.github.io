@@ -2,23 +2,27 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>有关于我 - 阿原的IT日记</title>
+<title>前端框架vue入门（二） - 阿原的IT日记</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="baidu-site-verification" content="nM9gr4fRJG">
 
 
 
-    <meta name="description" content="目前就读于南通大学。 java的潜伏者，python的观望者，js的拥护者。 博客的文档配合视频讲解效果更佳哦！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="有关于我">
-<meta property="og:url" content="/about/index.html">
+    <meta name="description" content="v-for的使用 用于循环便利   main.js 的代码  123456789101112131415161718var app = new Vue(&amp;#123;    el:&quot;#a&quot;,    data:&amp;#123;                hobbies:[            &amp;#123;name:&apos;basketball&apos;,            cost:100">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端框架vue入门（二）">
+<meta property="og:url" content="/2019/02/10/vue2/index.html">
 <meta property="og:site_name" content="阿原的IT日记">
-<meta property="og:description" content="目前就读于南通大学。 java的潜伏者，python的观望者，js的拥护者。 博客的文档配合视频讲解效果更佳哦！">
+<meta property="og:description" content="v-for的使用 用于循环便利   main.js 的代码  123456789101112131415161718var app = new Vue(&amp;#123;    el:&quot;#a&quot;,    data:&amp;#123;                hobbies:[            &amp;#123;name:&apos;basketball&apos;,            cost:100">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-10T05:31:12.314Z">
+<meta property="og:image" content="/vue2.assets/1550045959466.png">
+<meta property="og:image" content="/vu.assets/change.gif">
+<meta property="og:updated_time" content="2019-02-13T11:15:09.649Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="有关于我">
-<meta name="twitter:description" content="目前就读于南通大学。 java的潜伏者，python的观望者，js的拥护者。 博客的文档配合视频讲解效果更佳哦！">
+<meta name="twitter:title" content="前端框架vue入门（二）">
+<meta name="twitter:description" content="v-for的使用 用于循环便利   main.js 的代码  123456789101112131415161718var app = new Vue(&amp;#123;    el:&quot;#a&quot;,    data:&amp;#123;                hobbies:[            &amp;#123;name:&apos;basketball&apos;,            cost:100">
+<meta name="twitter:image" content="/vue2.assets/1550045959466.png">
 
 
 
@@ -88,7 +92,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logoAyuan.jpg" alt="有关于我" height="28">
+                <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（二）" height="28">
             
             </a>
         </div>
@@ -104,7 +108,7 @@
                 
                 <a class="navbar-item" href="/tags" style="font-size: 1.3rem">标签</a>
                 
-                <a class="navbar-item is-active" href="/about" style="font-size: 1.3rem">关于</a>
+                <a class="navbar-item" href="/about" style="font-size: 1.3rem">关于</a>
                 
             </div>
             
@@ -126,18 +130,82 @@
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     
+    <div class="card-image">
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（二）">
+        </span>
+    </div>
+    
     <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-10T04:18:09.000Z">2019-02-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1 分钟 读完 (大约 126 个字)
+                </span>
+                
+            </div>
+        </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                有关于我
+                前端框架vue入门（二）
             
         </h1>
         <div class="content">
-            <p>目前就读于南通大学。</p>
-<p>java的潜伏者，python的观望者，js的拥护者。</p>
-<p>博客的文档配合视频讲解效果更佳哦！</p>
+            <a id="more"></a>
+<h4 id="v-for的使用"><a href="#v-for的使用" class="headerlink" title="v-for的使用"></a>v-for的使用</h4><blockquote>
+<p>用于循环便利</p>
+</blockquote>
+<ul>
+<li>main.js 的代码</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="hljs-string">"#a"</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        </span><br><span class="line">        hobbies:[</span><br><span class="line">            &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">'basketball'</span>,</span><br><span class="line">            cost:<span class="hljs-number">100</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">'football'</span>,</span><br><span class="line">            cost:<span class="hljs-number">90</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">'volleyball'</span>,</span><br><span class="line">            cost:<span class="hljs-number">80</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;      </span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意点 ：字符串两边的冒号别忘了加</p>
+</blockquote>
+<ul>
+<li>html代码</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">       </span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">"hobby in hobbies"</span>&gt;</span>&#123;&#123;hobby.name&#125;&#125;的价格是&#123;&#123;hobby.cost&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./vue/main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>显示效果：</li>
+</ul>
+<p><img src="/vue2.assets/1550045959466.png" alt=""></p>
+<h4 id="v-bind的使用"><a href="#v-bind的使用" class="headerlink" title="v-bind的使用"></a>v-bind的使用</h4><blockquote>
+<p>用于数据绑定</p>
+</blockquote>
+<ul>
+<li>mian.js 定义数据 url</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="hljs-string">"#a"</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        url:<span class="hljs-string">"https://www.baidu.com"</span></span><br><span class="line">    </span><br><span class="line">    &#125;      </span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>html</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-bind:href</span>=<span class="hljs-string">"url"</span>&gt;</span>点我<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果url 里的数据改变 ，连接也会改变</p>
+</blockquote>
+<p><img src="/vu.assets/change.gif" alt=""></p>
 
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Vue/">Vue</a>
+                </div>
+            </div>
         </div>
         
         
@@ -177,6 +245,20 @@
 </div>
 
 
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/09/一些好用的工具推荐/">
+                <span class="level-item">一些好用的工具推荐</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -840,7 +922,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logoAyuan.jpg" alt="有关于我" height="28">
+                    <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（二）" height="28">
                 
                 </a>
                 <p class="is-size-7">
