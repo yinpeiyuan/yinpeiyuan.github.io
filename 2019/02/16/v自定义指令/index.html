@@ -8,19 +8,19 @@
 
 
 
-    <meta name="description" content="自定义指令">
+    <meta name="description" content="vue的自定义指令">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端框架vue入门（十、vue的自定义指令）">
 <meta property="og:url" content="/2019/02/16/v自定义指令/index.html">
 <meta property="og:site_name" content="阿原的IT日记">
-<meta property="og:description" content="自定义指令">
+<meta property="og:description" content="vue的自定义指令">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/v自定义指令.assets/4.gif">
-<meta property="og:updated_time" content="2019-02-16T14:14:55.320Z">
+<meta property="og:updated_time" content="2019-02-16T14:18:13.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端框架vue入门（十、vue的自定义指令）">
-<meta name="twitter:description" content="自定义指令">
+<meta name="twitter:description" content="vue的自定义指令">
 <meta name="twitter:image" content="/v自定义指令.assets/4.gif">
 
 
@@ -149,7 +149,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 337 个字)
+                    2 分钟 读完 (大约 339 个字)
                 </span>
                 
             </div>
@@ -161,14 +161,14 @@
             
         </h1>
         <div class="content">
-            <h4 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h4><a id="more"></a>
+            <h4 id="vue的自定义指令"><a href="#vue的自定义指令" class="headerlink" title="vue的自定义指令"></a>vue的自定义指令</h4><a id="more"></a>
 <blockquote>
 <p>自定义指令的意义其实就是</p>
 <p>能够自主定义带有一些功能的标签</p>
 </blockquote>
 <blockquote>
 <p>场景：我需要定义一个指令完成以下功能：</p>
-<p>点击span他就fix 再点击就static </p>
+<p>点击div他就fix 再点击就static </p>
 <p>通过自定义指令完成</p>
 </blockquote>
 <ul>
@@ -179,7 +179,7 @@
 <li>html</li>
 </ul>
 <blockquote>
-<p>最后的div目的是变出下拉框</p>
+<p>最后的span目的是变出下拉框</p>
 <p>定义了自定义指令v-fix</p>
 </blockquote>
 <figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"div1.fix=!div1.fix"</span>  <span class="hljs-attr">v-fix</span>=<span class="hljs-string">"div1.fix"</span>&gt;</span></span><br><span class="line">          Lorem, ipsum dolor sit amet consectetur adipisicing elit.</span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"div2.fix=!div2.fix"</span> <span class="hljs-attr">v-fix</span>=<span class="hljs-string">"div2.fix"</span>&gt;</span></span><br><span class="line">          Lorem ipsum dolor, sit amet consectetur adipisicing elit.</span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-size:80px"</span>&gt;</span></span><br><span class="line">            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, obcaecati? Possimus quia, pariatur voluptate reprehenderit expedita nobis amet! Exercitationem veritatis error aliquid recusandae velit assumenda incidunt debitis ipsum accusantium dolore.</span><br><span class="line">            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, obcaecati? Possimus quia, pariatur voluptate reprehenderit expedita nobis amet! Exercitationem veritatis error aliquid recusandae velit assumenda incidunt debitis ipsum accusantium dolore.</span><br><span class="line">            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, obcaecati? Possimus quia, pariatur voluptate reprehenderit expedita nobis amet! Exercitationem veritatis error aliquid recusandae velit assumenda incidunt debitis ipsum accusantium dolore.</span><br><span class="line">            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, obcaecati? Possimus quia, pariatur voluptate reprehenderit expedita nobis amet! Exercitationem veritatis error aliquid recusandae velit assumenda incidunt debitis ipsum accusantium dolore.</span><br><span class="line">            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, obcaecati? Possimus quia, pariatur voluptate reprehenderit expedita nobis amet! Exercitationem veritatis error aliquid recusandae velit assumenda incidunt debitis ipsum accusantium dolore.</span><br><span class="line">      <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="line">      </span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
