@@ -2,19 +2,27 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>标签: java - 阿原的IT日记</title>
+<title>前端框架vue入门（九、vue的平行组件之间通信以及过滤器的使用） - 阿原的IT日记</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="baidu-site-verification" content="nM9gr4fRJG">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="阿原的IT日记">
-<meta property="og:url" content="/tags/java/index.html">
+    <meta name="description" content="vue的平行组件之间通信以及过滤器的使用">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端框架vue入门（九、vue的平行组件之间通信以及过滤器的使用）">
+<meta property="og:url" content="/2019/02/16/vue平行组件之间通信/index.html">
 <meta property="og:site_name" content="阿原的IT日记">
+<meta property="og:description" content="vue的平行组件之间通信以及过滤器的使用">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/vue平行组件之间通信.assets/3.gif">
+<meta property="og:image" content="/vue平行组件之间通信.assets/1550320324799.png">
+<meta property="og:updated_time" content="2019-02-16T12:36:26.021Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿原的IT日记">
+<meta name="twitter:title" content="前端框架vue入门（九、vue的平行组件之间通信以及过滤器的使用）">
+<meta name="twitter:description" content="vue的平行组件之间通信以及过滤器的使用">
+<meta name="twitter:image" content="/vue平行组件之间通信.assets/3.gif">
 
 
 
@@ -84,7 +92,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logoAyuan.jpg" alt="阿原的IT日记" height="28">
+                <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（九、vue的平行组件之间通信以及过滤器的使用）" height="28">
             
             </a>
         </div>
@@ -121,39 +129,28 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">java</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-image">
-        <a href="/2019/02/13/日常问题的思考/" class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/java.jpg" alt="问题整理（java篇）">
-        </a>
+        <span class="image is-7by1">
+            <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（九、vue的平行组件之间通信以及过滤器的使用）">
+        </span>
     </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-02-13T10:18:09.000Z">2019-02-13</time>
+                <time class="level-item has-text-grey" datetime="2019-02-16T08:18:09.000Z">2019-02-16</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">java</a>
+                <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 105 个字)
+                    2 分钟 读完 (大约 277 个字)
                 </span>
                 
             </div>
@@ -161,21 +158,61 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/02/13/日常问题的思考/">问题整理（java篇）</a>
+                前端框架vue入门（九、vue的平行组件之间通信以及过滤器的使用）
             
         </h1>
         <div class="content">
-            <p>持续更新</p>
+            <p>vue的平行组件之间通信以及过滤器的使用</p>
+<a id="more"></a>
+<h4 id="vue平行组件之间通信"><a href="#vue平行组件之间通信" class="headerlink" title="vue平行组件之间通信"></a>vue平行组件之间通信</h4><blockquote>
+<p>场景：定义了两个组件 一个叫andy 一个叫bale</p>
+<p>andy负责发送  而bale 负责接收   </p>
+</blockquote>
+<h6 id="列子"><a href="#列子" class="headerlink" title="列子"></a>列子</h6><ul>
+<li>main.js</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> trans = <span class="hljs-keyword">new</span> Vue();</span><br><span class="line"></span><br><span class="line">Vue.component(<span class="hljs-string">"andy"</span>,&#123;</span><br><span class="line">    template: <span class="hljs-string">"#andyTpl"</span>,</span><br><span class="line">    data() &#123;</span><br><span class="line">      <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">          andyMsg:<span class="hljs-string">''</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">       change()&#123;</span><br><span class="line">           trans.$emit(<span class="hljs-string">"andyMsgChange"</span>,<span class="hljs-keyword">this</span>.andyMsg)</span><br><span class="line">       &#125; </span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line">Vue.component(<span class="hljs-string">"bale"</span>,&#123;</span><br><span class="line">    template: <span class="hljs-string">"#baleTpl"</span>,</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">            recMsg:<span class="hljs-string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">    </span><br><span class="line">    mounted()&#123;</span><br><span class="line">        <span class="hljs-keyword">var</span> ele = <span class="hljs-keyword">this</span>;</span><br><span class="line">        trans.$on(<span class="hljs-string">"andyMsgChange"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>&#123;</span><br><span class="line">            ele.recMsg = data</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="hljs-string">"#a"</span>,</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>简单解释一下 ：</p>
+<p>定义trans作为事件响应者，负责事件的开启和监听</p>
+<p>一旦andy的keyup事件触发 ，bale就接收到输入框的内容</p>
+</blockquote>
+<ul>
+<li>html</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">andy</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">andy</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">bale</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bale</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"andyTpl"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> @<span class="hljs-attr">keyup</span>=<span class="hljs-string">"change"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"andyMsg"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"baleTpl"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#123;&#123;recMsg&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>结果</li>
+</ul>
+<p><img src="/vue平行组件之间通信.assets/3.gif" alt=""></p>
+<h4 id="vue中的过滤器"><a href="#vue中的过滤器" class="headerlink" title="vue中的过滤器"></a>vue中的过滤器</h4><blockquote>
+<p>过滤器在vue中的意义在于修改数据传来的样式</p>
+<p>场景：输入框的数据变成原来的一半，用过滤器完成</p>
+</blockquote>
+<ul>
+<li>main.js 定义filter</li>
+</ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Vue.filter(<span class="hljs-string">'discount'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val,</span>)</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> val*<span class="hljs-number">0.5</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="hljs-string">"#a"</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        price: <span class="hljs-string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>html 用|来分割data和filter</li>
+</ul>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">        所有水果打5折<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span><br><span class="line">       <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">"price"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span><br><span class="line">        打完折后：&#123;&#123;price | discount&#125;&#125; </span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>结果</li>
+</ul>
+<p><img src="/vue平行组件之间通信.assets\1550320324799.png" alt=""></p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/02/13/日常问题的思考/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Vue/">Vue</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -183,9 +220,50 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-info donate">
+    <span class="icon is-small">
+        <i class="fab fa-alipay"></i>
+    </span>
+    <span>支付宝</span>
+    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
+</a>
+
+                
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/weixinpay.png" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/15/vue的全局组件和局部组件/">
+                <span class="level-item">前端框架vue入门（七、vue的全局组件和局部组件）</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 </div>
@@ -893,7 +971,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logoAyuan.jpg" alt="阿原的IT日记" height="28">
+                    <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（九、vue的平行组件之间通信以及过滤器的使用）" height="28">
                 
                 </a>
                 <p class="is-size-7">
