@@ -2,7 +2,7 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>前端框架vue入门（二） - 阿原的IT日记</title>
+<title>前端框架vue入门（二、v-for） - 阿原的IT日记</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="baidu-site-verification" content="nM9gr4fRJG">
 
@@ -11,16 +11,16 @@
     <meta name="description" content="vue系列第二弹 v-bind v-for的用法">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端框架vue入门（二）">
+<meta property="og:title" content="前端框架vue入门（二、v-for）">
 <meta property="og:url" content="/2019/02/10/vue2/index.html">
 <meta property="og:site_name" content="阿原的IT日记">
 <meta property="og:description" content="vue系列第二弹 v-bind v-for的用法">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/vue2.assets/1550045959466.png">
 <meta property="og:image" content="/vue2.assets/change.gif">
-<meta property="og:updated_time" content="2019-02-13T14:39:04.139Z">
+<meta property="og:updated_time" content="2019-02-16T04:43:49.198Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端框架vue入门（二）">
+<meta name="twitter:title" content="前端框架vue入门（二、v-for）">
 <meta name="twitter:description" content="vue系列第二弹 v-bind v-for的用法">
 <meta name="twitter:image" content="/vue2.assets/1550045959466.png">
 
@@ -92,7 +92,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（二）" height="28">
+                <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（二、v-for）" height="28">
             
             </a>
         </div>
@@ -132,7 +132,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（二）">
+            <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（二、v-for）">
         </span>
     </div>
     
@@ -158,7 +158,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                前端框架vue入门（二）
+                前端框架vue入门（二、v-for）
             
         </h1>
         <div class="content">
@@ -253,14 +253,14 @@
         <div class="level-start">
             <a class="level level-item has-link-grey  article-nav-prev" href="/2019/02/12/vue3/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">前端框架vue入门（三）</span>
+                <span class="level-item">前端框架vue入门（三、v-on）</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/09/vue/">
-                <span class="level-item">前端框架vue入门（一）</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/09/一些好用的工具推荐/">
+                <span class="level-item">一些好用的工具推荐</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -319,7 +319,7 @@
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        17
                     </p>
                 </div>
             </div>
@@ -329,7 +329,7 @@
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        7
                     </p>
                 </div>
             </div>
@@ -339,7 +339,7 @@
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        9
+                        11
                     </p>
                 </div>
             </div>
@@ -449,7 +449,7 @@
                 <span class="level-item">Vue</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">8</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/github-hexo/">
@@ -458,6 +458,14 @@
             </span>
             <span class="level-end">
                 <span class="level-item tag">3</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/java/">
+            <span class="level-start">
+                <span class="level-item">java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/springboot/">
@@ -475,6 +483,14 @@
             <span class="level-end">
                 <span class="level-item tag">1</span>
             </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/数据结构/">
+            <span class="level-start">
+                <span class="level-item">数据结构</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
         </a></li>
             </ul>
         </div>
@@ -487,7 +503,7 @@
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Css/" style="font-size: 10px;">Css</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Vue/" style="font-size: 20px;">Vue</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-hexo/" style="font-size: 20px;">github+hexo</a> <a href="/tags/jqyery/" style="font-size: 10px;">jqyery</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a>
+        <a href="/tags/Css/" style="font-size: 10px;">Css</a> <a href="/tags/Html/" style="font-size: 10px;">Html</a> <a href="/tags/Vue/" style="font-size: 20px;">Vue</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-hexo/" style="font-size: 15px;">github+hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/jqyery/" style="font-size: 10px;">jqyery</a> <a href="/tags/springboot/" style="font-size: 10px;">springboot</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a>
     </div>
 </div>
 
@@ -504,16 +520,16 @@
         
         <article class="media">
             
-            <a href="/2019/02/12/vue3/" class="media-left">
+            <a href="/2019/02/15/vue-组件通信/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（三）">
+                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（八、vue-组件内部通信）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-12T04:18:09.000Z">2019-02-12</time></div>
-                    <a href="/2019/02/12/vue3/" class="has-link-black-ter is-size-6">前端框架vue入门（三）</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-15T08:18:09.000Z">2019-02-15</time></div>
+                    <a href="/2019/02/15/vue-组件通信/" class="has-link-black-ter is-size-6">前端框架vue入门（八、vue-组件内部通信）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
                     </p>
@@ -523,16 +539,16 @@
         
         <article class="media">
             
-            <a href="/2019/02/10/vue2/" class="media-left">
+            <a href="/2019/02/15/vue的全局组件和局部组件/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（二）">
+                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（七、vue的全局组件和局部组件）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-10T04:18:09.000Z">2019-02-10</time></div>
-                    <a href="/2019/02/10/vue2/" class="has-link-black-ter is-size-6">前端框架vue入门（二）</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-15T08:18:09.000Z">2019-02-15</time></div>
+                    <a href="/2019/02/15/vue的全局组件和局部组件/" class="has-link-black-ter is-size-6">前端框架vue入门（七、vue的全局组件和局部组件）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
                     </p>
@@ -542,16 +558,16 @@
         
         <article class="media">
             
-            <a href="/2019/02/09/vue/" class="media-left">
+            <a href="/2019/02/14/vue中computed属性/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（一）">
+                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（六、vue中computed属性）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-09T04:18:09.000Z">2019-02-09</time></div>
-                    <a href="/2019/02/09/vue/" class="has-link-black-ter is-size-6">前端框架vue入门（一）</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-14T08:18:09.000Z">2019-02-14</time></div>
+                    <a href="/2019/02/14/vue中computed属性/" class="has-link-black-ter is-size-6">前端框架vue入门（六、vue中computed属性）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
                     </p>
@@ -561,18 +577,18 @@
         
         <article class="media">
             
-            <a href="/2019/02/09/一些好用的工具推荐/" class="media-left">
+            <a href="/2019/02/13/日常问题的思考/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/thumbnails/tool.jpg" alt="一些好用的工具推荐">
+                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="问题整理（java篇）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-09T04:18:09.000Z">2019-02-09</time></div>
-                    <a href="/2019/02/09/一些好用的工具推荐/" class="has-link-black-ter is-size-6">一些好用的工具推荐</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T10:18:09.000Z">2019-02-13</time></div>
+                    <a href="/2019/02/13/日常问题的思考/" class="has-link-black-ter is-size-6">问题整理（java篇）</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/工具/">工具</a>
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
                     </p>
                 </div>
             </div>
@@ -580,18 +596,18 @@
         
         <article class="media">
             
-            <a href="/2019/02/05/float/" class="media-left">
+            <a href="/2019/02/13/复习数据结构与算法（一）/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/thumbnails/h5.jpg" alt="Html+Css的难点（一、浮动布局的原理以及消除浮动）">
+                    <img class="thumbnail" src="/thumbnails/data.jpg" alt="复习数据结构与算法（一）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-05T01:48:16.000Z">2019-02-05</time></div>
-                    <a href="/2019/02/05/float/" class="has-link-black-ter is-size-6">Html+Css的难点（一、浮动布局的原理以及消除浮动）</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T10:18:09.000Z">2019-02-13</time></div>
+                    <a href="/2019/02/13/复习数据结构与算法（一）/" class="has-link-black-ter is-size-6">复习数据结构与算法（一）</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Html/">Html</a>
+                        <a class="has-link-grey -link" href="/categories/数据结构/">数据结构</a>
                     </p>
                 </div>
             </div>
@@ -615,7 +631,7 @@
                     <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -650,7 +666,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Vue/">
                         <span class="tag">Vue</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -676,6 +692,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/java/">
+                        <span class="tag">java</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jqyery/">
                         <span class="tag">jqyery</span>
                         <span class="tag is-grey">1</span>
@@ -692,6 +715,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/工具/">
                         <span class="tag">工具</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数据结构/">
+                        <span class="tag">数据结构</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -721,16 +751,16 @@
         
         <article class="media">
             
-            <a href="/2019/02/12/vue3/" class="media-left">
+            <a href="/2019/02/15/vue-组件通信/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（三）">
+                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（八、vue-组件内部通信）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-12T04:18:09.000Z">2019-02-12</time></div>
-                    <a href="/2019/02/12/vue3/" class="has-link-black-ter is-size-6">前端框架vue入门（三）</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-15T08:18:09.000Z">2019-02-15</time></div>
+                    <a href="/2019/02/15/vue-组件通信/" class="has-link-black-ter is-size-6">前端框架vue入门（八、vue-组件内部通信）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
                     </p>
@@ -740,16 +770,16 @@
         
         <article class="media">
             
-            <a href="/2019/02/10/vue2/" class="media-left">
+            <a href="/2019/02/15/vue的全局组件和局部组件/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（二）">
+                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（七、vue的全局组件和局部组件）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-10T04:18:09.000Z">2019-02-10</time></div>
-                    <a href="/2019/02/10/vue2/" class="has-link-black-ter is-size-6">前端框架vue入门（二）</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-15T08:18:09.000Z">2019-02-15</time></div>
+                    <a href="/2019/02/15/vue的全局组件和局部组件/" class="has-link-black-ter is-size-6">前端框架vue入门（七、vue的全局组件和局部组件）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
                     </p>
@@ -759,16 +789,16 @@
         
         <article class="media">
             
-            <a href="/2019/02/09/vue/" class="media-left">
+            <a href="/2019/02/14/vue中computed属性/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（一）">
+                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（六、vue中computed属性）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-09T04:18:09.000Z">2019-02-09</time></div>
-                    <a href="/2019/02/09/vue/" class="has-link-black-ter is-size-6">前端框架vue入门（一）</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-14T08:18:09.000Z">2019-02-14</time></div>
+                    <a href="/2019/02/14/vue中computed属性/" class="has-link-black-ter is-size-6">前端框架vue入门（六、vue中computed属性）</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
                     </p>
@@ -778,18 +808,18 @@
         
         <article class="media">
             
-            <a href="/2019/02/09/一些好用的工具推荐/" class="media-left">
+            <a href="/2019/02/13/日常问题的思考/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/thumbnails/tool.jpg" alt="一些好用的工具推荐">
+                    <img class="thumbnail" src="/thumbnails/vue.jpg" alt="问题整理（java篇）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-09T04:18:09.000Z">2019-02-09</time></div>
-                    <a href="/2019/02/09/一些好用的工具推荐/" class="has-link-black-ter is-size-6">一些好用的工具推荐</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T10:18:09.000Z">2019-02-13</time></div>
+                    <a href="/2019/02/13/日常问题的思考/" class="has-link-black-ter is-size-6">问题整理（java篇）</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/工具/">工具</a>
+                        <a class="has-link-grey -link" href="/categories/java/">java</a>
                     </p>
                 </div>
             </div>
@@ -797,18 +827,18 @@
         
         <article class="media">
             
-            <a href="/2019/02/05/float/" class="media-left">
+            <a href="/2019/02/13/复习数据结构与算法（一）/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/thumbnails/h5.jpg" alt="Html+Css的难点（一、浮动布局的原理以及消除浮动）">
+                    <img class="thumbnail" src="/thumbnails/data.jpg" alt="复习数据结构与算法（一）">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-05T01:48:16.000Z">2019-02-05</time></div>
-                    <a href="/2019/02/05/float/" class="has-link-black-ter is-size-6">Html+Css的难点（一、浮动布局的原理以及消除浮动）</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-13T10:18:09.000Z">2019-02-13</time></div>
+                    <a href="/2019/02/13/复习数据结构与算法（一）/" class="has-link-black-ter is-size-6">复习数据结构与算法（一）</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Html/">Html</a>
+                        <a class="has-link-grey -link" href="/categories/数据结构/">数据结构</a>
                     </p>
                 </div>
             </div>
@@ -832,7 +862,7 @@
                     <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">17</span>
                 </span>
             </a>
         </li>
@@ -867,7 +897,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/Vue/">
                         <span class="tag">Vue</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -893,6 +923,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/java/">
+                        <span class="tag">java</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/jqyery/">
                         <span class="tag">jqyery</span>
                         <span class="tag is-grey">1</span>
@@ -909,6 +946,13 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/工具/">
                         <span class="tag">工具</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数据结构/">
+                        <span class="tag">数据结构</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -930,7 +974,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（二）" height="28">
+                    <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（二、v-for）" height="28">
                 
                 </a>
                 <p class="is-size-7">
