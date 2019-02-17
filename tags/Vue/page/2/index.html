@@ -2,27 +2,19 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>前端框架vue入门（八、vue-组件内部通信） - 阿原的IT日记</title>
+<title>标签: Vue - 阿原的IT日记</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="baidu-site-verification" content="nM9gr4fRJG">
 
 
 
-    <meta name="description" content="vue的全局组件和局部组件">
-<meta name="keywords" content="Vue">
-<meta property="og:type" content="article">
-<meta property="og:title" content="前端框架vue入门（八、vue-组件内部通信）">
-<meta property="og:url" content="/2019/02/15/vue-组件通信/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="阿原的IT日记">
+<meta property="og:url" content="/tags/Vue/page/2/index.html">
 <meta property="og:site_name" content="阿原的IT日记">
-<meta property="og:description" content="vue的全局组件和局部组件">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/vue-组件通信.assets/1550220470097.png">
-<meta property="og:image" content="/vue-组件通信.assets/44-1550224120013.gif">
-<meta property="og:updated_time" content="2019-02-16T05:03:30.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端框架vue入门（八、vue-组件内部通信）">
-<meta name="twitter:description" content="vue的全局组件和局部组件">
-<meta name="twitter:image" content="/vue-组件通信.assets/1550220470097.png">
+<meta name="twitter:title" content="阿原的IT日记">
 
 
 
@@ -92,7 +84,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（八、vue-组件内部通信）" height="28">
+                <img src="/images/logoAyuan.jpg" alt="阿原的IT日记" height="28">
             
             </a>
         </div>
@@ -129,18 +121,29 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">标签</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Vue</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
     
     <div class="card-image">
-        <span class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（八、vue-组件内部通信）">
-        </span>
+        <a href="/2019/02/09/vue/" class="image is-7by1">
+            <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（一）">
+        </a>
     </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-02-15T08:18:09.000Z">2019-02-15</time>
+                <time class="level-item has-text-grey" datetime="2019-02-09T04:18:09.000Z">2019-02-09</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
@@ -150,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 257 个字)
+                    2 分钟 读完 (大约 267 个字)
                 </span>
                 
             </div>
@@ -158,130 +161,52 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                前端框架vue入门（八、vue-组件内部通信）
+                <a class="has-link-black-ter" href="/2019/02/09/vue/">前端框架vue入门（一）</a>
             
         </h1>
         <div class="content">
-            <p>vue的全局组件和局部组件</p>
-<a id="more"></a>
-<blockquote>
-<p>通信通俗来讲也就是传值</p>
-<p>前面讲到组件是用来封装代码，提高代码复用性</p>
-<p>代码封装变成组件就成为一个标签</p>
-</blockquote>
-<blockquote>
-<p>父—-组件</p>
-<p>子—-被封装代码</p>
-<p>关键：props属性</p>
-</blockquote>
-<ul>
-<li>父向子传值</li>
-</ul>
-<blockquote>
-<p>父定义了msg=hello  在 子中引用</p>
-</blockquote>
-<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">user</span> <span class="hljs-attr">msg</span>=<span class="hljs-string">'hello'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">user</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tpl"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">:href</span>=<span class="hljs-string">"'/user/'+msg"</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>main.js</li>
-</ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="hljs-string">'user'</span>,&#123;</span><br><span class="line">    template:<span class="hljs-string">"#tpl"</span>,</span><br><span class="line">    props:[<span class="hljs-string">'msg'</span>],</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="hljs-string">"#a"</span>,</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>结果父的msg：hello已经传到子的内容中</li>
-</ul>
-<p><img src="/vue-组件通信.assets/1550220470097.png" alt=""></p>
-<ul>
-<li>子向父传值 </li>
-</ul>
-<blockquote>
-<p>子向父传值就比较复杂 </p>
-<p>子利用$emit来触发事件</p>
-<p>父组件则监听</p>
-<p>this.$emit（’自定义事件名’,要传送的数据）； </p>
-</blockquote>
-<ul>
-<li>html</li>
-</ul>
-<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!-- 父子通信 --&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!-- &lt;user msg='hello'&gt;&lt;/user&gt; --&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!-- 子父通信 --&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">fardiv</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fardiv</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-comment">&lt;!-- &lt;template id="tpl"&gt;</span></span><br><span class="line"><span class="hljs-comment">        &lt;div&gt;</span></span><br><span class="line"><span class="hljs-comment">            &lt;a :href="'/user/'+msg"&gt;&#123;&#123;msg&#125;&#125;&lt;/a&gt;</span></span><br><span class="line"><span class="hljs-comment">        &lt;/div&gt;</span></span><br><span class="line"><span class="hljs-comment">    &lt;/template&gt; --&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"son"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"onclick"</span>&gt;</span>爸爸，我要喝水 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"far"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">           <span class="hljs-tag">&lt;<span class="hljs-name">sondiv</span> @<span class="hljs-attr">drink</span>=<span class="hljs-string">"drink"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">sondiv</span>&gt;</span> </span><br><span class="line">           <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"condition"</span> &gt;</span>给你喝水,儿子 ---&#123;&#123;msg&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>main.js</li>
-</ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="hljs-string">'sondiv'</span>,&#123;</span><br><span class="line">    template:<span class="hljs-string">"#son"</span>,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        onclick:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>.$emit(<span class="hljs-string">'drink'</span>,<span class="hljs-string">'儿子喝饱了'</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Vue.component(<span class="hljs-string">'fardiv'</span>,&#123;</span><br><span class="line">    template:<span class="hljs-string">'#far'</span>,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        drink(data)&#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>.condition=<span class="hljs-literal">true</span></span><br><span class="line">            <span class="hljs-keyword">this</span>.msg=data</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">            condition:<span class="hljs-literal">false</span>,</span><br><span class="line">            msg:<span class="hljs-string">""</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="hljs-string">"#a"</span>,</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>显示：</li>
-</ul>
-<p><img src="/vue-组件通信.assets/44-1550224120013.gif" alt=""></p>
-
+            <p>vue系列第一弹 简单入门</p>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Vue/">Vue</a>
+                <a class="button is-size-7 is-light" href="/2019/02/09/vue/#more">阅读更多</a>
                 </div>
             </div>
         </div>
         
         
-        
     </div>
 </div>
 
 
 
-<div class="card">
-    <div class="card-content">
-        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
-        <div class="buttons is-centered">
-            
-                
-<a class="button is-info donate">
-    <span class="icon is-small">
-        <i class="fab fa-alipay"></i>
-    </span>
-    <span>支付宝</span>
-    <div class="qrcode"><img src="/images/alipay.jpg" alt="支付宝"></div>
-</a>
-
-                
-                
-<a class="button is-success donate">
-    <span class="icon is-small">
-        <i class="fab fa-weixin"></i>
-    </span>
-    <span>微信</span>
-    <div class="qrcode"><img src="/images/weixinpay.png" alt="微信"></div>
-</a>
-
-                
-        </div>
-    </div>
-</div>
 
 
 
+
+
+
+    
 <div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/02/16/vue平行组件之间通信/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">前端框架vue入门（九、vue的平行组件之间通信以及过滤器的使用）</span>
-            </a>
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/tags/Vue/">上一页</a>
         </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/15/vue的全局组件和局部组件/">
-                <span class="level-item">前端框架vue入门（七、vue的全局组件和局部组件）</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
+        <div class="pagination-next is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/tags/Vue/page/3/">下一页</a>
         </div>
-        
-    </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/tags/Vue/">1</a></li>
+            
+            <li><a class="pagination-link is-current" href="/tags/Vue/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
 </div>
-
-
 </div>
                 
 
@@ -987,7 +912,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（八、vue-组件内部通信）" height="28">
+                    <img src="/images/logoAyuan.jpg" alt="阿原的IT日记" height="28">
                 
                 </a>
                 <p class="is-size-7">

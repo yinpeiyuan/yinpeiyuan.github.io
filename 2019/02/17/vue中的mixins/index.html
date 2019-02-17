@@ -2,27 +2,27 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>前端框架vue入门（八、vue-组件内部通信） - 阿原的IT日记</title>
+<title>前端框架vue入门（九、vue中的mixins和solt） - 阿原的IT日记</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="baidu-site-verification" content="nM9gr4fRJG">
 
 
 
-    <meta name="description" content="vue的全局组件和局部组件">
+    <meta name="description" content="vue中的mixins和solt">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端框架vue入门（八、vue-组件内部通信）">
-<meta property="og:url" content="/2019/02/15/vue-组件通信/index.html">
+<meta property="og:title" content="前端框架vue入门（九、vue中的mixins和solt）">
+<meta property="og:url" content="/2019/02/17/vue中的mixins/index.html">
 <meta property="og:site_name" content="阿原的IT日记">
-<meta property="og:description" content="vue的全局组件和局部组件">
+<meta property="og:description" content="vue中的mixins和solt">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="/vue-组件通信.assets/1550220470097.png">
-<meta property="og:image" content="/vue-组件通信.assets/44-1550224120013.gif">
-<meta property="og:updated_time" content="2019-02-16T05:03:30.161Z">
+<meta property="og:image" content="/vue中的mixins.assets/3.gif">
+<meta property="og:image" content="/vue中的mixins.assets/1550413585393.png">
+<meta property="og:updated_time" content="2019-02-17T14:29:19.532Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端框架vue入门（八、vue-组件内部通信）">
-<meta name="twitter:description" content="vue的全局组件和局部组件">
-<meta name="twitter:image" content="/vue-组件通信.assets/1550220470097.png">
+<meta name="twitter:title" content="前端框架vue入门（九、vue中的mixins和solt）">
+<meta name="twitter:description" content="vue中的mixins和solt">
+<meta name="twitter:image" content="/vue中的mixins.assets/3.gif">
 
 
 
@@ -92,7 +92,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（八、vue-组件内部通信）" height="28">
+                <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（九、vue中的mixins和solt）" height="28">
             
             </a>
         </div>
@@ -132,7 +132,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（八、vue-组件内部通信）">
+            <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（九、vue中的mixins和solt）">
         </span>
     </div>
     
@@ -140,7 +140,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-02-15T08:18:09.000Z">2019-02-15</time>
+                <time class="level-item has-text-grey" datetime="2019-02-17T08:18:09.000Z">2019-02-17</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
@@ -150,7 +150,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 分钟 读完 (大约 257 个字)
+                    2 分钟 读完 (大约 371 个字)
                 </span>
                 
             </div>
@@ -158,58 +158,64 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                前端框架vue入门（八、vue-组件内部通信）
+                前端框架vue入门（九、vue中的mixins和solt）
             
         </h1>
         <div class="content">
-            <p>vue的全局组件和局部组件</p>
-<a id="more"></a>
-<blockquote>
-<p>通信通俗来讲也就是传值</p>
-<p>前面讲到组件是用来封装代码，提高代码复用性</p>
-<p>代码封装变成组件就成为一个标签</p>
+            <h3 id="vue中的mixins和solt"><a href="#vue中的mixins和solt" class="headerlink" title="vue中的mixins和solt"></a>vue中的mixins和solt</h3><a id="more"></a>
+<h4 id="vue中的mixins"><a href="#vue中的mixins" class="headerlink" title="vue中的mixins"></a>vue中的mixins</h4><blockquote>
+<p>mixins意思为混合</p>
+<p>在我看来mixins的作用是用来代码重复的问题</p>
+<p>将相同的代码定义在同一块地方</p>
 </blockquote>
-<blockquote>
-<p>父—-组件</p>
-<p>子—-被封装代码</p>
-<p>关键：props属性</p>
-</blockquote>
-<ul>
-<li>父向子传值</li>
-</ul>
-<blockquote>
-<p>父定义了msg=hello  在 子中引用</p>
-</blockquote>
-<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">user</span> <span class="hljs-attr">msg</span>=<span class="hljs-string">'hello'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">user</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tpl"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">:href</span>=<span class="hljs-string">"'/user/'+msg"</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>main.js</li>
 </ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="hljs-string">'user'</span>,&#123;</span><br><span class="line">    template:<span class="hljs-string">"#tpl"</span>,</span><br><span class="line">    props:[<span class="hljs-string">'msg'</span>],</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="hljs-string">"#a"</span>,</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在main.js中我将两个component代码</p>
+<p>定义在了total中</p>
+<p>在两个component中分别用mixins引用</p>
+</blockquote>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> total=&#123;</span><br><span class="line">    methods:&#123;</span><br><span class="line">        toggle()&#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>.visible=!<span class="hljs-keyword">this</span>.visible</span><br><span class="line">        &#125;,</span><br><span class="line">        show()&#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>.visible=<span class="hljs-literal">true</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        hide()&#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>.visible=<span class="hljs-literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">            visible:<span class="hljs-literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Vue.component(<span class="hljs-string">'mouse'</span>,&#123;</span><br><span class="line">    template:<span class="hljs-string">"#mouseTpl"</span>,</span><br><span class="line">    mixins:[total]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Vue.component(<span class="hljs-string">"pop"</span>,&#123;</span><br><span class="line">    template:<span class="hljs-string">'#popTpl'</span>,</span><br><span class="line">    mixins:[total]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="hljs-string">"#a"</span>,</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>结果父的msg：hello已经传到子的内容中</li>
+<li>html</li>
 </ul>
-<p><img src="/vue-组件通信.assets/1550220470097.png" alt=""></p>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">      <span class="hljs-tag">&lt;<span class="hljs-name">pop</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pop</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">mouse</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">mouse</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"popTpl"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"toggle"</span> &gt;</span>打招呼<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"visible"</span>&gt;</span></span><br><span class="line">                哈喽，我出现了<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span></span><br><span class="line">                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ullam vel distinctio? Laboriosam officiis hic aliquam saepe mollitia magni sint minima, ullam aspernatur a qui beatae dignissimos labore cum veritatis!</span><br><span class="line">            <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mouseTpl"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> @<span class="hljs-attr">mouseenter</span>=<span class="hljs-string">"show"</span> @<span class="hljs-attr">mouseleave</span>=<span class="hljs-string">"hide"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"background:skyblue"</span> &gt;</span>碰我啊<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"visible"</span>&gt;</span>hi。你好<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>子向父传值 </li>
+<li>演示：</li>
 </ul>
 <blockquote>
-<p>子向父传值就比较复杂 </p>
-<p>子利用$emit来触发事件</p>
-<p>父组件则监听</p>
-<p>this.$emit（’自定义事件名’,要传送的数据）； </p>
+<p>功能上并没有变简单，只是代码的重用变高了</p>
+</blockquote>
+<p><img src="/vue中的mixins.assets/3.gif" alt=""></p>
+<blockquote>
+<p>如果想修改一些值，只要在原有的component重新定义一下就行</p>
+<p>重新定义的会覆盖mixins</p>
+</blockquote>
+<h4 id="vue中的slot"><a href="#vue中的slot" class="headerlink" title="vue中的slot"></a>vue中的slot</h4><blockquote>
+<p>slot 是插槽</p>
+<p>在我看来，他的用法就是</p>
+<p>在引用相同组件的时候</p>
+<p>定义不同的不同的部分</p>
 </blockquote>
 <ul>
 <li>html</li>
 </ul>
-<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!-- 父子通信 --&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!-- &lt;user msg='hello'&gt;&lt;/user&gt; --&gt;</span></span><br><span class="line">        <span class="hljs-comment">&lt;!-- 子父通信 --&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">fardiv</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">fardiv</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-comment">&lt;!-- &lt;template id="tpl"&gt;</span></span><br><span class="line"><span class="hljs-comment">        &lt;div&gt;</span></span><br><span class="line"><span class="hljs-comment">            &lt;a :href="'/user/'+msg"&gt;&#123;&#123;msg&#125;&#125;&lt;/a&gt;</span></span><br><span class="line"><span class="hljs-comment">        &lt;/div&gt;</span></span><br><span class="line"><span class="hljs-comment">    &lt;/template&gt; --&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"son"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">"onclick"</span>&gt;</span>爸爸，我要喝水 <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"far"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">           <span class="hljs-tag">&lt;<span class="hljs-name">sondiv</span> @<span class="hljs-attr">drink</span>=<span class="hljs-string">"drink"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">sondiv</span>&gt;</span> </span><br><span class="line">           <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">"condition"</span> &gt;</span>给你喝水,儿子 ---&#123;&#123;msg&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>html 定义了两个相同的组件</p>
+<p>在组件中引用不同的内容</p>
+<p>关键：<slot name=" slot名字"> </slot></p>
+<p>之后你再主div引入时加上slot=”slot名字”就行</p>
+</blockquote>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-undefined">        .box&#123;</span></span><br><span class="line"><span class="hljs-undefined">            max-width: 300px;</span></span><br><span class="line"><span class="hljs-undefined">            border: 1px solid black;</span></span><br><span class="line"><span class="hljs-undefined">            margin-bottom:10px;</span></span><br><span class="line"><span class="hljs-undefined">        &#125;</span></span><br><span class="line"><span class="hljs-undefined">        </span></span><br><span class="line"><span class="hljs-undefined">        .box .title&#123;</span></span><br><span class="line"><span class="hljs-undefined">            border-bottom: 1px solid black;</span></span><br><span class="line"><span class="hljs-undefined">        &#125;</span></span><br><span class="line"><span class="hljs-undefined">        .box .container&#123;</span></span><br><span class="line"><span class="hljs-undefined">            border-bottom: 1px solid black;</span></span><br><span class="line"><span class="hljs-undefined">        &#125;</span></span><br><span class="line"><span class="hljs-undefined"></span></span><br><span class="line"><span class="hljs-undefined">    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">titdiv</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"title"</span>&gt;</span></span><br><span class="line">                哈喽</span><br><span class="line">            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">            </span><br><span class="line">           </span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">titdiv</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">titdiv</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">"title"</span>&gt;</span></span><br><span class="line">                我不好</span><br><span class="line">            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">           </span><br><span class="line">            </span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">titdiv</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'tit'</span>&gt;</span> </span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"box"</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"title"</span>&gt;</span></span><br><span class="line">                    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"title"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">                </span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span></span><br><span class="line">                        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"container"</span>&gt;</span>lore<span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">               </span><br><span class="line">                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>= <span class="hljs-string">"footer"</span>&gt;</span></span><br><span class="line">                        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"footer"</span>&gt;</span>也许明天<span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span></span><br><span class="line">                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>main.js</li>
 </ul>
-<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="hljs-string">'sondiv'</span>,&#123;</span><br><span class="line">    template:<span class="hljs-string">"#son"</span>,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        onclick:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>.$emit(<span class="hljs-string">'drink'</span>,<span class="hljs-string">'儿子喝饱了'</span>)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Vue.component(<span class="hljs-string">'fardiv'</span>,&#123;</span><br><span class="line">    template:<span class="hljs-string">'#far'</span>,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        drink(data)&#123;</span><br><span class="line">            <span class="hljs-keyword">this</span>.condition=<span class="hljs-literal">true</span></span><br><span class="line">            <span class="hljs-keyword">this</span>.msg=data</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">            condition:<span class="hljs-literal">false</span>,</span><br><span class="line">            msg:<span class="hljs-string">""</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="hljs-string">"#a"</span>,</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="hljs-string">'titdiv'</span>,&#123;</span><br><span class="line">    template:<span class="hljs-string">'#tit'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="hljs-string">"#a"</span>,</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>显示：</li>
+<li>演示</li>
 </ul>
-<p><img src="/vue-组件通信.assets/44-1550224120013.gif" alt=""></p>
+<p><img src="/vue中的mixins.assets\1550413585393.png" alt=""></p>
 
         </div>
         
@@ -263,17 +269,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/02/16/vue平行组件之间通信/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">前端框架vue入门（九、vue的平行组件之间通信以及过滤器的使用）</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/15/vue的全局组件和局部组件/">
-                <span class="level-item">前端框架vue入门（七、vue的全局组件和局部组件）</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/16/v自定义指令/">
+                <span class="level-item">前端框架vue入门（十、vue的自定义指令）</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -987,7 +986,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（八、vue-组件内部通信）" height="28">
+                    <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（九、vue中的mixins和solt）" height="28">
                 
                 </a>
                 <p class="is-size-7">
