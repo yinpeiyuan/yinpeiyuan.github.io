@@ -2,24 +2,28 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>github+hexo搭建博客(二、hexo初体验) - 阿原的IT日记</title>
+<title>前端框架vue入门（十二、vue-router） - 阿原的IT日记</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="baidu-site-verification" content="nM9gr4fRJG">
 
 
 
-    <meta name="description" content="视频教程：https://www.bilibili.com/video/av42219636/">
-<meta name="keywords" content="github+hexo">
+    <meta name="description" content="vue-router的简单使用">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github+hexo搭建博客(二、hexo初体验)">
-<meta property="og:url" content="/2019/02/02/github-hexo搭建博客-二、hexo初体验/index.html">
+<meta property="og:title" content="前端框架vue入门（十二、vue-router）">
+<meta property="og:url" content="/2019/02/19/v-router/index.html">
 <meta property="og:site_name" content="阿原的IT日记">
-<meta property="og:description" content="视频教程：https://www.bilibili.com/video/av42219636/">
+<meta property="og:description" content="vue-router的简单使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-03T04:06:46.226Z">
+<meta property="og:image" content="/v-router.assets/8.gif">
+<meta property="og:image" content="/v-router.assets/9.gif">
+<meta property="og:image" content="/v-router.assets/10.gif">
+<meta property="og:updated_time" content="2019-03-03T06:24:23.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github+hexo搭建博客(二、hexo初体验)">
-<meta name="twitter:description" content="视频教程：https://www.bilibili.com/video/av42219636/">
+<meta name="twitter:title" content="前端框架vue入门（十二、vue-router）">
+<meta name="twitter:description" content="vue-router的简单使用">
+<meta name="twitter:image" content="/v-router.assets/8.gif">
 
 
 
@@ -89,7 +93,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logoAyuan.jpg" alt="github+hexo搭建博客(二、hexo初体验)" height="28">
+                <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（十二、vue-router）" height="28">
             
             </a>
         </div>
@@ -129,7 +133,7 @@
     
     <div class="card-image">
         <span class="image is-7by1">
-            <img class="thumbnail" src="/thumbnails/second.png" alt="github+hexo搭建博客(二、hexo初体验)">
+            <img class="thumbnail" src="/thumbnails/vue.jpg" alt="前端框架vue入门（十二、vue-router）">
         </span>
     </div>
     
@@ -137,17 +141,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-02-02T02:56:41.000Z">2019-02-02</time>
+                <time class="level-item has-text-grey" datetime="2019-02-19T08:18:09.000Z">2019-02-19</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/github-hexo/">github+hexo</a>
+                <a class="has-link-grey -link" href="/categories/Vue/">Vue</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 101 个字)
+                    2 分钟 读完 (大约 351 个字)
                 </span>
                 
             </div>
@@ -155,45 +159,72 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                github+hexo搭建博客(二、hexo初体验)
+                前端框架vue入门（十二、vue-router）
             
         </h1>
         <div class="content">
-            <p>视频教程：<a href="https://www.bilibili.com/video/av42219636/" target="_blank" rel="noopener">https://www.bilibili.com/video/av42219636/</a></p>
-<a id="more"></a>
-<h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ul>
-<li>下载node.js<ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></li>
-<li>测试：npm</li>
-<li>安装淘宝镜像<ul>
-<li>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
-<li>cnpm -v</li>
+            <h3 id="vue-router的简单使用"><a href="#vue-router的简单使用" class="headerlink" title="vue-router的简单使用"></a>vue-router的简单使用</h3><a id="more"></a>
+<h3 id="v-router"><a href="#v-router" class="headerlink" title="v-router"></a>v-router</h3><blockquote>
+<p>在我看来v-router是用来完成单页应用的页面跳转</p>
+<p>优势:1.页面不刷新，用户体验好</p>
+<p>​    2.表单不提交，保留数据</p>
+<p>​    3.逻辑结构清晰</p>
+</blockquote>
+<h4 id="快速体验"><a href="#快速体验" class="headerlink" title="快速体验"></a>快速体验</h4><blockquote>
+<p>在html中，我们分别映入vue和vue-router以及我们的main.js</p>
+<p>在作用域中我们用router-link定位连接</p>
+<p>router-view显示页面</p>
+</blockquote>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"a"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/"</span>&gt;</span>首页<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/about"</span>&gt;</span>关于<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">router-view</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">router-view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../vue/vue-router.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"main.js"</span>&gt;</span><span class="hljs-undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>main.js</li>
 </ul>
-</li>
+<blockquote>
+<p>在routes是我们定义的一个数组</p>
+<p>里面包含两个连接以及对应的组件模版</p>
+<p>然后传给vue-router</p>
+<p>vue-router 又作为参数传给vue</p>
+</blockquote>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">var</span> routes=[</span><br><span class="line">    &#123;</span><br><span class="line">        path:<span class="hljs-string">'/'</span>,</span><br><span class="line">        component:&#123;</span><br><span class="line">            template: <span class="hljs-string">`</span></span><br><span class="line"><span class="hljs-string">                &lt;h1&gt;首页欢迎您&lt;/h1&gt;</span></span><br><span class="line"><span class="hljs-string">            </span></span><br><span class="line"><span class="hljs-string">            `</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path:<span class="hljs-string">'/about'</span>,</span><br><span class="line">        component:&#123;</span><br><span class="line">            template:<span class="hljs-string">`</span></span><br><span class="line"><span class="hljs-string">                &lt;h1&gt;关于我的一些事&lt;/h1&gt;</span></span><br><span class="line"><span class="hljs-string">            `</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">var</span> router =<span class="hljs-keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes: routes</span><br><span class="line">&#125;)</span><br><span class="line"><span class="hljs-keyword">var</span> app = <span class="hljs-keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="hljs-string">"#a"</span>,</span><br><span class="line">    router:router</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>演示</li>
 </ul>
-</li>
-<li>下载git<ul>
-<li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></li>
+<p><img src="/v-router.assets/8.gif" alt="8"></p>
+<h4 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h4><ul>
+<li>演示</li>
 </ul>
-</li>
-<li>下载hexo<ul>
-<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></li>
-<li><h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><ul>
-<li>npm install hexo-cli -g</li>
+<blockquote>
+<p>小明的显示小明的名字和年龄</p>
+<p>小红的显示小红的名字和年龄</p>
+</blockquote>
+<p><img src="/v-router.assets/9.gif" alt=""></p>
+<blockquote>
+<p>有两种方法获取值</p>
+<p>第一种：$route.params </p>
+<p>第二种： $route.query</p>
+</blockquote>
+<ul>
+<li>html</li>
 </ul>
-</li>
-<li><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><ul>
-<li>win+R cmd</li>
-<li>在你希望的盘里创建一个目录 例如F://blog</li>
-<li>cd F://blog</li>
-<li>hexo init</li>
-<li>npm install</li>
-<li>hexo server</li>
+<figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/user/xiaoming?age=10"</span>&gt;</span>小明的主页<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/user/xiaohong?age=15"</span>&gt;</span>小红的主页<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>main.js</li>
 </ul>
-</li>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">       path:<span class="hljs-string">'/user/:name'</span>,</span><br><span class="line">       component:&#123;</span><br><span class="line">           template:<span class="hljs-string">`</span></span><br><span class="line"><span class="hljs-string">               &lt;div&gt;</span></span><br><span class="line"><span class="hljs-string">               &lt;h1&gt;我叫&#123;&#123;$route.params.name&#125;&#125;&lt;/h1&gt;</span></span><br><span class="line"><span class="hljs-string">               &lt;h1&gt;我今年&#123;&#123;$route.query.age&#125;&#125;&lt;/h1&gt;</span></span><br><span class="line"><span class="hljs-string">               &lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">           `</span></span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="子路由"><a href="#子路由" class="headerlink" title="子路由"></a>子路由</h4><blockquote>
+<p>在原有页面的基础在添加信息就可能要用到子路由chilren</p>
+</blockquote>
+<ul>
+<li>演示</li>
 </ul>
-</li>
+<p><img src="/v-router.assets/10.gif" alt=""></p>
+<ul>
+<li>html</li>
 </ul>
+<figure class="highlight js hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        path:<span class="hljs-string">'/user/:name'</span>,</span><br><span class="line">        component:&#123;</span><br><span class="line">            template:<span class="hljs-string">`</span></span><br><span class="line"><span class="hljs-string">                &lt;div&gt;</span></span><br><span class="line"><span class="hljs-string">                &lt;h1&gt;我叫&#123;&#123;$route.params.name&#125;&#125;&lt;/h1&gt;</span></span><br><span class="line"><span class="hljs-string">                </span></span><br><span class="line"><span class="hljs-string">                &lt;router-link to="more" append&gt;查看更多&lt;/router-link&gt;</span></span><br><span class="line"><span class="hljs-string">                &lt;router-view&gt;&lt;/router-view&gt;</span></span><br><span class="line"><span class="hljs-string">                &lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">            `</span></span><br><span class="line">        &#125;,</span><br><span class="line">        children:[&#123;</span><br><span class="line">            path:<span class="hljs-string">"more"</span>,</span><br><span class="line">            component:&#123;</span><br><span class="line">                template:<span class="hljs-string">`</span></span><br><span class="line"><span class="hljs-string">                &lt;div&gt;&#123;&#123;$route.params.name&#125;&#125;的更多信息&lt;/div&gt;</span></span><br><span class="line"><span class="hljs-string">                `</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>html 不变</p>
+</blockquote>
 
         </div>
         
@@ -201,7 +232,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/github-hexo/">github+hexo</a>
+                    <a class="has-link-grey -link" href="/tags/Vue/">Vue</a>
                 </div>
             </div>
         </div>
@@ -247,17 +278,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/02/03/github-hexo搭建博客-三、git的前世今生与github/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">github+hexo搭建博客(三、git的前世今生与github)</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/02/利用github创建博客/">
-                <span class="level-item">利用github+hexo创建博客(一)</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/02/17/vue中的mixins/">
+                <span class="level-item">前端框架vue入门（十一、vue中的mixins和solt）</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -971,7 +995,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logoAyuan.jpg" alt="github+hexo搭建博客(二、hexo初体验)" height="28">
+                    <img src="/images/logoAyuan.jpg" alt="前端框架vue入门（十二、vue-router）" height="28">
                 
                 </a>
                 <p class="is-size-7">
